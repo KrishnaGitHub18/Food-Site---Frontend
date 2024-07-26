@@ -1,0 +1,18 @@
+.boxMain {
+    margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  background: linear-gradient(135deg, #333, #444, #555, #666, #777);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.css-box{
+    border: 2px solid black;
+    padding: 50px;
+}
