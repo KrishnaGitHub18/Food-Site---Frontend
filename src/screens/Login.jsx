@@ -34,6 +34,8 @@ const Login = () => {
       alert("Please enter valid credentials.");
     }
     else{
+      localStorage.setItem("authToken", dataValidity.authToken);
+      console.log(localStorage.authToken);
       navigate("/");
     }
   }
