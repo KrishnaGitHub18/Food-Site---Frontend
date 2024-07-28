@@ -1,7 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("authToken");
+        navigate("/");
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -19,17 +27,22 @@ const Navbar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
+                        {/* <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link active fs-6" aria-current="page" to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/login">Login</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/signup">Signup</Link> 
-                            </li>
-                        </ul>
+                        </ul> */}
+                        {                               
+                            (localStorage.getItem('authToken'))
+                            ?   <div className="d-flex ms-auto">
+                                    <button className="button-33 mx-2">🛒</button>
+                                    <button className="button-33 mx-2" onClick={handleLogout}>⚙️</button>
+                                </div>
+                            :   <div className="d-flex ms-auto">
+                                    <Link className="button-33 mx-2" to="/login" role="button">Login</Link>
+                                    <Link className="button-33" to="/signup" role="button">Signup</Link>
+                                </div>                               
+                        }
                     </div>
                 </div>
             </nav>

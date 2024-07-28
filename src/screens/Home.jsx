@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Card from '../components/Card';
 import Carousel from '../components/Carousel';
 import { useState, useEffect } from 'react';
+import '../css/signup-page.css';
 
 const Home = () => {
 
@@ -18,15 +19,99 @@ const Home = () => {
       }
     });
     const finalData = await res.json();
-    console.log(finalData); 
+    // console.log(finalData); 
+    setFoodItemsDisplay(finalData[0]);
+    setFoodCategoryDisplay(finalData[1]);
   }
-  useEffect(()=>{fetchData()}, []);
+  useEffect(() => { fetchData() }, []);
 
   return (
     <div>
       <div> <Navbar /> </div>
       <div> <Carousel /> </div>
-      <div> <Card /> </div>
+
+      {/* <div className='container'>
+        {
+          (foodCategoryDisplay)
+            ? (foodCategoryDisplay.map(
+                (data) => {
+                  return ( 
+                    <div className='row mb-3'>
+
+                      <div key={data._id} className={'fs-3 m-3'}> 
+                        {data.CategoryName} 
+                      </div>
+                      
+                      <hr />
+
+                      <div>
+                        {
+                          (foodItemsDisplay)
+                            ? (
+                                foodItemsDisplay.filter(
+                                  (item) => (item.CategoryName === data.CategoryName)  
+                                ).map(
+                                  (filteredItems) => {
+                                    return(
+                                      <div key={filteredItems._id} className='col-12 col-md-6 col-lg-3'>
+                                        <Card 
+                                          foodItemsName = {filteredItems.name}
+                                          foodItemsImage = {filteredItems.img}
+                                          foodItemsOptions = {filteredItems.options[0]}
+                                          foodItemsDescription = {filteredItems.description}
+                                        />
+                                      </div>
+                                    )
+                                  }
+                                )
+                              )
+                            : console.log("error displaying food items")
+                        }
+                      </div>
+
+                    </div>
+                  )
+                }
+              ))
+            : console.log("error displaying food catagories")
+        }
+
+      </div> */}
+
+      <div className="container">
+        {foodCategoryDisplay ? (
+          foodCategoryDisplay.map((data) => {
+            return (
+              <div key={data._id}>
+                <div className={'fs-3 m-3'}>{data.CategoryName}</div>
+                <hr />
+                <div className="card-grid">
+                  {foodItemsDisplay
+                    ? foodItemsDisplay
+                      .filter((item) => item.CategoryName === data.CategoryName)
+                      .map((filteredItems) => {
+                        return (
+                          <div key={filteredItems._id}>
+                            <Card
+                              foodItemsName={filteredItems.name}
+                              foodItemsImage={filteredItems.img}
+                              foodItemsOptions={filteredItems.options[0]}
+                              foodItemsDescription={filteredItems.description}
+                            />
+                          </div>
+                        );
+                      })
+                    : console.log('error displaying food items')}
+                </div>
+              </div>
+            );
+          })
+        ) : (
+          console.log('error displaying food categories')
+        )}
+      </div>
+
+
       <div> <Footer /> </div>
     </div>
   );
