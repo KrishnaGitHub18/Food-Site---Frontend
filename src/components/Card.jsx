@@ -7,7 +7,7 @@ const Card = (props) => {
 
     return (
         <div>
-            <div className="card m-3">
+            <div className="card m-3 bg-dark">
                 {/* <img src="https://img.freepik.com/premium-photo/large-bowl-food-with-fish-vegetables_197463-2405.jpg" className="card-img-top" alt="..." /> */}
                 <img src={props.foodItemsImage} className="card-img-top" alt="..." style={{height: "120px", objectFit: "fill"}}/>
                 <div className="card-body">
@@ -33,6 +33,8 @@ const Card = (props) => {
                             }
                         </select>
                     </div>
+                    <hr />
+                    <button className='h-100 w-100 bg-red rounded' >Add to Cart</button>
                     {/* <div> Total Price </div> */}
                 </div>
             </div>
