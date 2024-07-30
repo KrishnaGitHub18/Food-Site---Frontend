@@ -30,54 +30,6 @@ const Home = () => {
       <div> <Navbar /> </div>
       <div> <Carousel /> </div>
 
-      {/* <div className='container'>
-        {
-          (foodCategoryDisplay)
-            ? (foodCategoryDisplay.map(
-                (data) => {
-                  return ( 
-                    <div className='row mb-3'>
-
-                      <div key={data._id} className={'fs-3 m-3'}> 
-                        {data.CategoryName} 
-                      </div>
-                      
-                      <hr />
-
-                      <div>
-                        {
-                          (foodItemsDisplay)
-                            ? (
-                                foodItemsDisplay.filter(
-                                  (item) => (item.CategoryName === data.CategoryName)  
-                                ).map(
-                                  (filteredItems) => {
-                                    return(
-                                      <div key={filteredItems._id} className='col-12 col-md-6 col-lg-3'>
-                                        <Card 
-                                          foodItemsName = {filteredItems.name}
-                                          foodItemsImage = {filteredItems.img}
-                                          foodItemsOptions = {filteredItems.options[0]}
-                                          foodItemsDescription = {filteredItems.description}
-                                        />
-                                      </div>
-                                    )
-                                  }
-                                )
-                              )
-                            : console.log("error displaying food items")
-                        }
-                      </div>
-
-                    </div>
-                  )
-                }
-              ))
-            : console.log("error displaying food catagories")
-        }
-
-      </div> */}
-
       <div className="container">
         {foodCategoryDisplay ? (
           foodCategoryDisplay.map((data) => {
@@ -93,10 +45,11 @@ const Home = () => {
                         return (
                           <div key={filteredItems._id}>
                             <Card
-                              foodItemsName={filteredItems.name}
-                              foodItemsImage={filteredItems.img}
+                              foodItemProp = {filteredItems}
+                              // foodItemsName={filteredItems.name}
+                              // foodItemsImage={filteredItems.img}
+                              // foodItemsDescription={filteredItems.description}
                               foodItemsOptions={filteredItems.options[0]}
-                              foodItemsDescription={filteredItems.description}
                             />
                           </div>
                         );
@@ -118,3 +71,58 @@ const Home = () => {
 }
 
 export default Home;
+
+
+
+
+
+
+
+//Old piece of code
+{/* <div className='container'>
+  {
+    (foodCategoryDisplay)
+      ? (foodCategoryDisplay.map(
+          (data) => {
+            return ( 
+              <div className='row mb-3'>
+
+                <div key={data._id} className={'fs-3 m-3'}> 
+                  {data.CategoryName} 
+                </div>
+                
+                <hr />
+
+                <div>
+                  {
+                    (foodItemsDisplay)
+                      ? (
+                          foodItemsDisplay.filter(
+                            (item) => (item.CategoryName === data.CategoryName)  
+                          ).map(
+                            (filteredItems) => {
+                              return(
+                                <div key={filteredItems._id} className='col-12 col-md-6 col-lg-3'>
+                                  <Card 
+                                    foodItemsName = {filteredItems.name}
+                                    foodItemsImage = {filteredItems.img}
+                                    foodItemsOptions = {filteredItems.options[0]}
+                                    foodItemsDescription = {filteredItems.description}
+                                  />
+                                </div>
+                              )
+                            }
+                          )
+                        )
+                      : console.log("error displaying food items")
+                  }
+                </div>
+
+              </div>
+            )
+          }
+        ))
+      : console.log("error displaying food catagories")
+  }
+
+</div> */}

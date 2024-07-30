@@ -1,27 +1,69 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import {useCartState, useCartDispatch} from './ContextReducer';
 
 const Card = (props) => {
 
     let options = props.foodItemsOptions;
     let priceOptions = Object.keys(options);
+    let dispatch = useCartDispatch();
+    let finalOrder = useCartState();
+    
+    // Order Details
+    const [quantity, setQuantity] = useState(1);
+    const [size, setSize] = useState("");
+    const priceRef = useRef();
+    
+    //Billing
+    let finalPrice = ((quantity)*(parseInt(options[size]))) ;
+    useEffect(
+        () => {
+            setSize(priceRef.current.value)
+        }, []
+    )
 
+    const handleAddToCart = async () => {
+        // alert('Page under development');
+        await dispatch(
+            {
+                type: "ADD",
+                id: props.foodItemProp._id,
+                name: props.foodItemProp.name,
+                price: finalPrice,
+                quantity: quantity,
+                size: size
+            }
+        )
+        console.log(finalOrder);
+    } 
+    
     return (
         <div>
             <div className="card m-3 bg-dark">
-                {/* <img src="https://img.freepik.com/premium-photo/large-bowl-food-with-fish-vegetables_197463-2405.jpg" className="card-img-top" alt="..." /> */}
-                <img src={props.foodItemsImage} className="card-img-top" alt="..." style={{height: "120px", objectFit: "fill"}}/>
+
+                {/* IMAGE */}
+                <img src={props.foodItemProp.img} className="card-img-top" alt="..." style={{height: "120px", objectFit: "fill"}}/>
+                
                 <div className="card-body">
-                    <h5 className="card-title">{props.foodItemsName}</h5>
-                    <p className="card-text" style={{"fontSize": "12.5px"}}>{props.foodItemsDescription}</p>
+
+                    {/* NAME */}
+                    <h5 className="card-title">{props.foodItemProp.name}</h5>
+
+                    {/* DESCRIPTION */}
+                    <p className="card-text" style={{"fontSize": "12.5px"}}>{props.foodItemProp.description}</p>
+
                     <div className='container w-100 d-flex flex-row'>
-                        <select className='m-2 h-100 w-100 bg-success rounded'>
+
+                        {/* QUANTITY */}
+                        <select className='m-2 h-100 w-100 bg-success rounded' onChange={(e)=>setQuantity(e.target.value)}>
                             {Array.from(Array(6), (e, i) => {
                                 return (
                                     <option key={i + 1} value={i + 1}> {i + 1} </option>
                                 )
                             })}
                         </select>
-                        <select className='m-2 h-100 w-100 bg-success rounded'>
+
+                        {/* SIZE & PRICE */}
+                        <select className='m-2 h-100 w-100 bg-success rounded' onChange={(e)=>setSize(e.target.value)} ref={priceRef}>
                             {
                                 priceOptions.map(
                                     (data) => {
@@ -34,8 +76,11 @@ const Card = (props) => {
                         </select>
                     </div>
                     <hr />
-                    <button className='h-100 w-100 bg-red rounded' >Add to Cart</button>
-                    {/* <div> Total Price </div> */}
+
+                    {/* SUBMIT */}
+                    <div className='container d-flex justify-content-start align-items-center fs-5'>Value: ${finalPrice}</div>
+                    <button className='h-100 w-100 bg-red rounded' onClick={handleAddToCart}>Add to Cart</button>
+                    
                 </div>
             </div>
         </div>
