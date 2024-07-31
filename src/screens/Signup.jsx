@@ -7,7 +7,7 @@ import '../css/Signup.css';
 const Signup = () => {
 
     //Navigation
-  let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const [credentials, setCredentials] = useState(
         {
@@ -134,6 +134,18 @@ const Signup = () => {
                                     value={credentials.geolocation}
                                     onChange={changes}
                                 />
+                            </div>
+
+                            {/* CHECKBOX */}
+                            <div className="mb-3 form-check">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    id="exampleCheck1"
+                                />
+                                <label className="form-check-label" htmlFor="exampleCheck1">
+                                    Agreed T&C
+                                </label>
                             </div>
 
                             {/* SUBMIT */}

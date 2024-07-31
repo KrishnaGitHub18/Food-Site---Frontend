@@ -12,6 +12,7 @@ const Home = () => {
   const [foodCategoryDisplay, setFoodCategoryDisplay] = useState([]);
 
   const fetchData = async () => {
+    // let res = await fetch("https://food-site-backend-nine.vercel.app/api/foodItemsData", {
     let res = await fetch("http://localhost:5000/api/foodItemsData", {
       method: "POST",
       headers: {
