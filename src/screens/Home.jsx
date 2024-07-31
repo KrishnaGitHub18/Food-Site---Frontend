@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Card from '../components/Card';
 import Carousel from '../components/Carousel';
 import { useState, useEffect } from 'react';
-import '../css/signup-page.css';
+import '../css/Card.css';
 
 const Home = () => {
 

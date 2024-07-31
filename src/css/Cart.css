@@ -1,0 +1,40 @@
+.image {
+    height: 40%;
+    margin-bottom: 2%;
+}
+.parent-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+}
+.text2{
+    color: rgb(170, 195, 173);
+}
+.button{
+    margin: 4%;
+    border: 2px solid #00BC8C;
+    background-color: #00BC8C;
+    height: 40px;
+    width: 135px;
+    border-radius: 8px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button:hover{
+    background-color: #088263;
+}
+.trash-icon {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    cursor: pointer;
+}
+.trash-button {
+    background: none; /* Remove default button styling */
+    border: none;
+    padding: 0;
+}

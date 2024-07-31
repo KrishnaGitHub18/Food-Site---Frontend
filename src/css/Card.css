@@ -1,0 +1,11 @@
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+}
+.card-grid > div {
+    flex: 1 1 calc(25% - 16px); 
+    box-sizing: border-box;
+    min-width: 250px; 
+    max-width: 300px;
+}

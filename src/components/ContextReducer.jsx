@@ -19,6 +19,10 @@ const reducer = (state, action) => {
                     }
                 ]
             ) 
+        case "REMOVE" : 
+            let tmp = [...state]
+            tmp.splice(action.index, 1)
+            return tmp
         default :
             alert ("Error in reducer")
     }

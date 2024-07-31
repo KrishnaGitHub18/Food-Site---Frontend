@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import Badge from 'react-bootstrap/Badge';
+import { useCartState, useCartDispatch } from '../components/ContextReducer';
 
 const Navbar = () => {
 
@@ -9,6 +11,7 @@ const Navbar = () => {
         localStorage.removeItem("authToken");
         navigate("/");
     }
+    let finalOrderData = useCartState();
 
     return (
         <div>
@@ -32,16 +35,23 @@ const Navbar = () => {
                                 <Link className="nav-link active fs-6" aria-current="page" to="/">Home</Link>
                             </li>
                         </ul> */}
-                        {                               
+                        {
                             (localStorage.getItem('authToken'))
-                            ?   <div className="d-flex ms-auto">
-                                    <button className="button-33 mx-2">🛒</button>
+                                ? <div className="d-flex ms-auto">
+                                    <Link to='/Cart' className='button-33 mx-2'>
+                                        {
+                                            (finalOrderData.length)
+                                                ?   <Badge pill bg='danger'>{ finalOrderData.length }</Badge>
+                                                :   ""
+                                        }
+                                        🛒
+                                    </Link>
                                     <button className="button-33 mx-2" onClick={handleLogout}>⚙️</button>
                                 </div>
-                            :   <div className="d-flex ms-auto">
+                                : <div className="d-flex ms-auto">
                                     <Link className="button-33 mx-2" to="/login" role="button">Login</Link>
                                     <Link className="button-33" to="/signup" role="button">Signup</Link>
-                                </div>                               
+                                </div>
                         }
                     </div>
                 </div>

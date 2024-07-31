@@ -14,13 +14,13 @@ const Carousel = () => {
                             <button className="btn btn-outline-success fw-bolder" type="submit">Search</button>
                         </form>
                     </div>
-                    <div className="carousel-item active" style={{ maxHeight: "600px", objectFit: "contain"}}>
+                    <div className="carousel-item active" style={{ maxHeight: "90vh", objectFit: "contain"}}>
                         <img src={imgPizza} className="d-block w-100" alt="..." />
                     </div>
-                    <div className="carousel-item" style={{ maxHeight: "600px", objectFit: "contain !important" }}>
+                    <div className="carousel-item" style={{ maxHeight: "90vh", objectFit: "contain !important" }}>
                         <img src={imgBurgers} className="d-block w-100" alt="..." />
                     </div>
-                    <div className="carousel-item" style={{ maxHeight: "600px", objectFit: "contain !important" }}>
+                    <div className="carousel-item" style={{ maxHeight: "90vh", objectFit: "contain !important" }}>
                         <img src={imgMomos} className="d-block w-100" alt="..." />
                     </div>
                 </div>
