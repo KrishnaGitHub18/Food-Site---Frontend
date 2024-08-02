@@ -163,3 +163,79 @@
         display: none;
     }
 }
+
+
+.form-box {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #f5f5f5;
+    max-width: 400px;
+    margin: auto;
+}
+
+.form-label {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    display: block; /* Ensures label is on its own line */
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Space between inputs */
+    width: 100%; /* Full width of the parent container */
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+.form-control:focus {
+    background-color: #444;
+    border-color: #666;
+    outline: none;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Full width for better usability */
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.btn-success:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-check {
+    margin-top: 10px;
+    margin-bottom: 20px; /* Space between checkbox and button */
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}

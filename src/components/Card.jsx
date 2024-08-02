@@ -22,7 +22,7 @@ const Card = (props) => {
     )
 
     const handleAddToCart = async () => {
-        // alert('Page under development');
+        // alert('Added to cart');
         await dispatch(
             {
                 type: "ADD",
@@ -38,50 +38,43 @@ const Card = (props) => {
     
     return (
         <div>
-            <div className="card m-3 bg-dark">
+            <div className="cardmain">
+
+                {/* CONTENT */}
+                <div className="cardcontent">
+                    <div className="cardname">{props.foodItemProp.name}</div>
+                    <div className="carddescription">{props.foodItemProp.description}</div>
+
+                    {/* QUANTITY */}
+                    <select className='cardquantity' onChange={(e)=>setQuantity(e.target.value)}>
+                        {Array.from(Array(6), (e, i) => {
+                            return (
+                                <option key={i + 1} value={i + 1}> {i + 1} </option>
+                            )
+                        })}
+                    </select>
+
+                    {/* SIZE & PRICE */}
+                    <select className='cardsize' onChange={(e)=>setSize(e.target.value)} ref={priceRef}>
+                        {
+                            priceOptions.map(
+                                (data) => {
+                                    return(
+                                        <option value={data}>{data}</option>
+                                    )
+                                }
+                            )
+                        }
+                    </select>
+                    <div>Value: ${finalPrice}</div>
+                </div>
 
                 {/* IMAGE */}
-                <img src={props.foodItemProp.img} className="card-img-top" alt="..." style={{height: "120px", objectFit: "fill"}}/>
-                
-                <div className="card-body">
-
-                    {/* NAME */}
-                    <h5 className="card-title">{props.foodItemProp.name}</h5>
-
-                    {/* DESCRIPTION */}
-                    <p className="card-text" style={{"fontSize": "12.5px"}}>{props.foodItemProp.description}</p>
-
-                    <div className='container w-100 d-flex flex-row'>
-
-                        {/* QUANTITY */}
-                        <select className='m-2 h-100 w-100 bg-success rounded' onChange={(e)=>setQuantity(e.target.value)}>
-                            {Array.from(Array(6), (e, i) => {
-                                return (
-                                    <option key={i + 1} value={i + 1}> {i + 1} </option>
-                                )
-                            })}
-                        </select>
-
-                        {/* SIZE & PRICE */}
-                        <select className='m-2 h-100 w-100 bg-success rounded' onChange={(e)=>setSize(e.target.value)} ref={priceRef}>
-                            {
-                                priceOptions.map(
-                                    (data) => {
-                                        return(
-                                            <option value={data}>{data}</option>
-                                        )
-                                    }
-                                )
-                            }
-                        </select>
-                    </div>
-                    <hr />
-
-                    {/* SUBMIT */}
-                    <div className='container d-flex justify-content-start align-items-center fs-5'>Value: ${finalPrice}</div>
-                    <button className='h-100 w-100 bg-red rounded' onClick={handleAddToCart}>Add to Cart</button>
-                    
+                <div className="cardimage">
+                    <img src={props.foodItemProp.img} className=""/> 
+                    <button onClick={handleAddToCart} className='submitoverlap'></button>
                 </div>
+
             </div>
         </div>
 
@@ -89,3 +82,51 @@ const Card = (props) => {
 }
 
 export default Card;
+
+
+
+// <div className="card m-3 bg-dark">
+
+// {/* IMAGE */}
+// <img src={props.foodItemProp.img} className="card-img-top" alt="..." style={{height: "120px", objectFit: "fill"}}/>
+
+// <div className="card-body">
+
+//     {/* NAME */}
+//     <h5 className="card-title">{props.foodItemProp.name}</h5>
+
+//     {/* DESCRIPTION */}
+//     <p className="card-text" style={{"fontSize": "12.5px"}}>{props.foodItemProp.description}</p>
+
+//     <div className='container w-100 d-flex flex-row'>
+
+//         {/* QUANTITY */}
+//         <select className='m-2 h-100 w-100 bg-success rounded' onChange={(e)=>setQuantity(e.target.value)}>
+//             {Array.from(Array(6), (e, i) => {
+//                 return (
+//                     <option key={i + 1} value={i + 1}> {i + 1} </option>
+//                 )
+//             })}
+//         </select>
+
+//         {/* SIZE & PRICE */}
+//         <select className='m-2 h-100 w-100 bg-success rounded' onChange={(e)=>setSize(e.target.value)} ref={priceRef}>
+//             {
+//                 priceOptions.map(
+//                     (data) => {
+//                         return(
+//                             <option value={data}>{data}</option>
+//                         )
+//                     }
+//                 )
+//             }
+//         </select>
+//     </div>
+//     <hr />
+
+//     {/* SUBMIT */}
+//     <div className='container d-flex justify-content-start align-items-center fs-5'>Value: ${finalPrice}</div>
+//     <button className='h-100 w-100 bg-red rounded' onClick={handleAddToCart}>Add to Cart</button>
+    
+// </div>
+// </div>

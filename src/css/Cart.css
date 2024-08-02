@@ -2,6 +2,7 @@
     height: 40%;
     margin-bottom: 2%;
 }
+
 .parent-div {
     display: flex;
     flex-direction: column;
@@ -10,12 +11,12 @@
     height: 100vh; 
 }
 .text2{
-    color: rgb(170, 195, 173);
+    color: rgb(95, 95, 95);
 }
 .button{
     margin: 4%;
-    border: 2px solid #00BC8C;
-    background-color: #00BC8C;
+    /* border: 2px solid #00BC8C; */
+    background-color: #FC8A06;
     height: 40px;
     width: 135px;
     border-radius: 8px;
@@ -26,15 +27,179 @@
     align-items: center;
 }
 .button:hover{
-    background-color: #088263;
+    font-weight: 500;
 }
+
 .trash-icon {
-    width: 20px; /* Adjust the width as needed */
-    height: 20px; /* Adjust the height as needed */
+    width: 20px; 
+    height: 20px; 
     cursor: pointer;
 }
 .trash-button {
-    background: none; /* Remove default button styling */
+    background: none; 
     border: none;
     padding: 0;
 }
+
+
+/* TABLE */
+
+.cartpagecss{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 24px;
+    height: 10vh;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+    background-color: #fc8a06;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablemain {
+    width: 92.6%;
+    margin: 20px;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    padding: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.rowhead {
+    /* background-color: #4CAF50; */
+    color: #FC8A06;
+    font-weight: 800;
+    text-align: left;
+}
+
+.rowval {
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.columnvalhead {
+    border-bottom: 1px solid #ddd;
+}
+
+.table td {
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+.trash-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.trash-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+}
+
+.trash-button:hover .trash-icon {
+    transform: scale(1.2);
+}
+
+.fs-2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FC8A06;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #FC8A06;
+}
+
+@media (max-width: 768px) {
+    .rowval, .table td {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+
+
+
+
+/* 
+
+
+.heading{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 700;
+    margin-bottom: 70px;
+    color: white;
+    background-color: #028643;
+}
+.tablemain{
+    border: 2px solid red;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.table{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.rowhead{
+    width: 100%;
+}
+.rowvalhead{
+    border: 2px solid purple;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60px;
+}
+.columnhead{
+    border: 2px solid green;
+    width: 100%;
+}
+.columnvalhead{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+} */

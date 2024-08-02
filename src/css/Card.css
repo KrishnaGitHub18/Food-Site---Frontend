@@ -1,4 +1,4 @@
-.card-grid {
+/* .card-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 16px; 
@@ -8,4 +8,90 @@
     box-sizing: border-box;
     min-width: 250px; 
     max-width: 300px;
+} */
+
+.cardmain{
+    /* border: 2px solid red; */
+    width: 85%;
+    max-width: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 205px;
+    padding: 5%;
+    border-radius: 10px;
+    background-color: #FDFDFD;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cardimage {
+    height: 82%;
+    width: 44%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    /* border: 2px solid black; */
+}
+.submitoverlap{
+    position: absolute;
+    left: 60%;
+    top: 60%;
+    height: 45%;
+    width: 45%;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 15px;
+    background-image: url('../Images/Card/Plus.svg');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    object-fit: none; 
+    cursor: pointer;
+}
+.submitoverlap:hover{
+    left: 58%;
+    top: 58%;
+    height: 47%;
+    width: 47%;
+}
+/* .cardimage img {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+} */
+.cardcontent{
+    /* border: 2px solid red; */
+    height: 75%;
+    width: 56%;
+}
+.cardname{
+    font-size: 20px;
+    font-weight: 700;
+}
+.carddescription{
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.cardquantity{
+    width: 40%;
+    height: 20%;
+    border-radius: 8px;
+    margin-right: 2px;
+    margin-top: 15px;
+    background-color: #FC8A06;
+    color: white;
+}
+.cardsize{
+    width: 40%;
+    height: 20%;
+    border-radius: 8px;
+    margin-left: 2px;
+    margin-top: 15px;
+    background-color: #FC8A06;
+    color: white;
 }

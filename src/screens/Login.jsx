@@ -71,7 +71,7 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               
               {/* EMAIL */}
-              <label htmlFor="exampleInputEmail1" className="form-label">
+              <label htmlFor="exampleInputEmail1">
                 Email address
               </label>
               <input

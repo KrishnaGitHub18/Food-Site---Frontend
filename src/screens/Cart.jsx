@@ -26,48 +26,51 @@ const Cart = () => {
 
     return (
         <div>
-            <div className='container m-auto mt-5 table-responsive table-responsive-sm table-responsive-md'> 
-                <table className='table table-hover'>
-                    <thead className='text-success fs-4'>
-                        <tr>
-                            <th scope='col'>#</th>
-                            <th scope='col'>NAME</th>
-                            <th scope='col'>QUANTITY</th>
-                            <th scope='col'>OPTION</th>
-                            <th scope='col'>AMOUNT</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            finalOrder.map(
-                                (food, index) => {
-                                    return(
-                                        <tr>
-                                            <th scope='row'>{ index+1 }</th>
-                                            <td>{ food.name }</td>
-                                            <td>{ food.quantity }</td>
-                                            <td>{ food.size }</td>
-                                            <td>{ food.price }</td>
-                                            <td>
-                                                <button className="trash-button">
-                                                    <img className="trash-icon" src={trash} alt="DELETE" onClick={() => { dispatch({ type: "REMOVE", index: index }) }} />
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    )
-                                }
-                            )
-                        }
-                    </tbody>
-                </table>
-                <div>
-                    <h1 className='fs-2'>Final Price: ${finalPrice}/-</h1>
-                </div>
-                <div>
-                    <button className='btn bg-success mt-5'>
-                        Check Out
-                    </button>
-                </div>
+            <div className="heading">MY BASKET</div>
+                <div className="cartpagecss">
+                <div className='tablemain'> 
+                    <table className='table'>
+
+                        <thead className='rowhead'>
+                            <tr className='rowvalhead'>
+                                <th className='rowval' scope='col'> </th>
+                                <th className='rowval' scope='col'>NAME</th>
+                                <th className='rowval' scope='col'>QUANTITY</th>
+                                <th className='rowval' scope='col'>OPTION</th>
+                                <th className='rowval' scope='col'>AMOUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody className='columnhead'>
+                            {
+                                finalOrder.map(
+                                    (food, index) => {
+                                        return(
+                                            <tr className='columnvalhead'>
+                                                <th scope='tablevalues'>{ index+1 }</th>
+                                                <td>{ food.name }</td>
+                                                <td>{ food.quantity }</td>
+                                                <td>{ food.size }</td>
+                                                <td>{ food.price }</td>
+                                                <td className="trash-button">
+                                                        <img className="trash-icon" src={trash} alt="DELETE" onClick={() => { dispatch({ type: "REMOVE", index: index }) }} />
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
+                                )
+                            }
+                        </tbody>
+
+                    </table>
+                    <div>
+                        <h1 className='fs-2'>Final Price: ${finalPrice}/-</h1>
+                    </div>
+                    <div>
+                        <button className='btn bg-success mt-5'>
+                            Check Out
+                        </button>
+                    </div>
+                </div>`
             </div>
         </div>
     )

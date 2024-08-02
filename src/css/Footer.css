@@ -1,0 +1,70 @@
+.parentdiv{
+    /* border: 2px solid black; */
+    display: flex;
+    height: 300px;
+    background-color: #D9D9D9;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.section1{
+    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+.logoimg{
+    /* border: 2px solid red; */
+    width: 80%;
+    height: 37%;
+    background-image: url('../Images/Navbar/logo.jpg');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    object-fit: none; 
+}
+.appstoreplaystore{
+    width: 40%;
+    height: 14.29%;
+    background-image: url('../Images/Footer/app-store-badges-en\ 1.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    object-fit: none; 
+}
+.footertext{
+    height: 30%;
+}
+.section2{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    padding-left: 13%;
+    flex-direction: column;
+    width: 30%;
+}
+.footera, .footerb{
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: large;
+}
+a{
+    color: black;
+}
+.section3{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    width: 30%;
+}
+@media (max-width: 767px){
+    .section1{
+        width: 100%;
+    }
+    .section2, .section3, .logoimg{
+        display: none;
+    }
+}

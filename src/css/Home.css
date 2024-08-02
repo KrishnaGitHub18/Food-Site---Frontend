@@ -1,0 +1,137 @@
+.homepageover{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.offers{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 330px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.offer1{
+    background-image: url('../Images/Banner/offer1.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    object-fit: none; 
+    height: 85%;
+    width: 31%;
+}
+.offer2{
+    background-image: url('../Images/Banner/offer2.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    object-fit: none; 
+    height: 85%;
+    width: 31%;
+
+}.offer3{
+    background-image: url('../Images/Banner/offer3.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    object-fit: none; 
+    height: 85%;
+    width: 31%;
+}
+
+
+
+
+
+.foodMenu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.headingfoodmenu{   
+    margin-top: 20px;
+    width: 96.2%;
+    font-weight: 700;
+    height: 80px;
+    
+    /* padding-left: 10%; */
+}
+h2{
+    margin-left: 60px;
+    margin-top: 45px;
+}
+.displayfoodmenumain{   
+    margin-top: 30px;
+    /* border: 2px solid black; */
+    width: 96.2%;
+}
+
+.foodcatagoryname{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 2%;
+}
+
+.coverfoodboxmain{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.foodBoxMain{
+    /* border: 2px solid green; */
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 0 -10px;
+}
+.foodBoxMain > div{
+    flex: 1 1 31%;
+    box-sizing: border-box;
+    margin: 10px;
+    max-width: 376px;
+}
+
+@media (max-width: 1024px) {
+    .offers, .headingfoodmenu{
+        display: none;
+    }
+}
+@media (min-width:767px){
+    .hme{
+        display: flex;
+        justify-content: center;
+    }    
+    .banner{
+        /* border: 2px solid black; */
+        width: 96.2%;
+        height: 0;
+        padding-top: 30%; 
+        background-image: url('../Images/Banner/Rectangle.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+@media (max-width: 767px){
+    .hme{
+        display: flex;
+        justify-content: center;
+        /* border: 2px solid green; */
+    }
+    .banner{
+        /* border: 2px solid black; */
+        width: 96.2%;
+        height: 0;
+        padding-top: 70%; 
+        background-image: url('../Images/Banner/phone.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
