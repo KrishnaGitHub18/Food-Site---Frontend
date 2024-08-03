@@ -70,19 +70,19 @@ const Navbar = () => {
                 {
                     phbtn
                         ?   (localStorage.getItem('authToken'))
-                                ?   <div>
-                                        <button>Home</button>
-                                        <button>Browse Menu</button>
-                                        <button>Special Offers</button>
-                                        <Link to='/Cart'>
-                                            <button>
+                                ?   <div className='phone-nav-buttons-main'>
+                                        <button className='phone-nav-button'>Home</button>
+                                        <button className='phone-nav-button'>Browse Menu</button>
+                                        <button className='phone-nav-button'>Special Offers</button>
+                                        {/* <Link to='/Cart'> */}
+                                            <button className='phone-nav-button' onClick={()=>navigate("/Cart")}>
                                                 My Cart
                                             </button>
-                                        </Link>
-                                        <button onClick={handleLogout}>Logout</button>
-                                        <button>Track Orders</button>
+                                        {/* </Link> */}
+                                        <button className='phone-nav-button'>Track Orders</button>
+                                        <button className='phone-nav-button' onClick={handleLogout}>Logout</button>
                                     </div>
-                                :   <button onClick={handleLogin}>
+                                :   <button className='phone-nav-button' onClick={handleLogin}>
                                         <div>Login/Signup</div>
                                     </button>
                         :   ""

@@ -80,7 +80,7 @@ const Card = (props) => {
                     <button onClick={handleAddToCart} className='submitoverlap'></button>
                     <ToastContainer 
                        position="top-right"
-                       autoClose={500}
+                       autoClose={1500}
                        hideProgressBar={false}
                        newestOnTop={false}
                        closeOnClick

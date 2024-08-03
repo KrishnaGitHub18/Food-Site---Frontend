@@ -141,6 +141,22 @@
     height: 50px; 
     width: 50px; 
 }
+.phone-nav-btn{
+    /* border: 2px solid red; */
+    padding-left: 2.25%;
+    padding-right: 2.25%;
+}
+.phone-nav-buttons-main{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+}
+.phone-nav-buttons-main > button{
+    background-color: #ffbf7e;
+    height: 50px;
+    font-size: small;
+}
+
 
 
 @media (max-width: 1024px){
