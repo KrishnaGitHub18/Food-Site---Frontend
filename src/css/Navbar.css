@@ -123,10 +123,37 @@
     color: black;
     font-size: 90%;
 }
+/* .phone-nav{
+    border: 2px solid blue;
+    position: absolute;
+    right: 0;
+    background-image: url('../Images/Navbar/Menu.png');
+    height:10%;
+    width: 4%;
+} */
+.phone-nav{
+    position: absolute; 
+    right: 0;
+    background-image: url('../Images/Navbar/Menu.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px; 
+    width: 50px; 
+}
 
 
 @media (max-width: 1024px){
     .dyn-nav{
+        display: none;
+    }
+    .navbarmain{
+        position: relative;
+        width: 96.2%; /*    |||||||||||||||||||||||||||||||||||||||||||||||||||||||||    */
+    }
+}
+@media (min-width: 1024px) {
+    .phone-nav, .phone-nav-btn{
         display: none;
     }
 }

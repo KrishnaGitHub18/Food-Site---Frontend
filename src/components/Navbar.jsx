@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import Badge from 'react-bootstrap/Badge';
-import { useCartState, useCartDispatch } from '../components/ContextReducer';
+// import Badge from 'react-bootstrap/Badge';
+// import { useCartState, useCartDispatch } from '../components/ContextReducer';
 import '../css/Navbar.css'
 
 const Navbar = () => {
+
+    const [phbtn, setphbtn] = useState(0);
 
     const navigate = useNavigate();
     const handleLogout = () => {
@@ -15,7 +17,7 @@ const Navbar = () => {
     const handleLogin = () => {
         navigate("/login")
     }
-    let finalOrderData = useCartState();
+    // let finalOrderData = useCartState();
 
     return (
 
@@ -58,6 +60,33 @@ const Navbar = () => {
                     }
                 </div>
 
+                {/* PHONE NAV */}
+                {
+                    <div className="phone-nav" onClick={()=> {phbtn ? setphbtn(0) : setphbtn(1)}}> </div>
+                }
+
+            </div>
+            <div className="phone-nav-btn">
+                {
+                    phbtn
+                        ?   (localStorage.getItem('authToken'))
+                                ?   <div>
+                                        <button>Home</button>
+                                        <button>Browse Menu</button>
+                                        <button>Special Offers</button>
+                                        <Link to='/Cart'>
+                                            <button>
+                                                My Cart
+                                            </button>
+                                        </Link>
+                                        <button onClick={handleLogout}>Logout</button>
+                                        <button>Track Orders</button>
+                                    </div>
+                                :   <button onClick={handleLogin}>
+                                        <div>Login/Signup</div>
+                                    </button>
+                        :   ""
+                }
             </div>
         </div>
 

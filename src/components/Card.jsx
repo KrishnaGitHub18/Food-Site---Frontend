@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {useCartState, useCartDispatch} from './ContextReducer';
 
 const Card = (props) => {
@@ -21,8 +23,9 @@ const Card = (props) => {
         }, []
     )
 
+    // const notify = () => toast("Value added to cart");
     const handleAddToCart = async () => {
-        // alert('Added to cart');
+        
         await dispatch(
             {
                 type: "ADD",
@@ -33,7 +36,9 @@ const Card = (props) => {
                 size: size
             }
         )
+
         console.log(finalOrder);
+        toast("Value added to cart");;
     } 
     
     return (
@@ -71,8 +76,19 @@ const Card = (props) => {
 
                 {/* IMAGE */}
                 <div className="cardimage">
-                    <img src={props.foodItemProp.img} className=""/> 
+                    <img src={props.foodItemProp.img}/> 
                     <button onClick={handleAddToCart} className='submitoverlap'></button>
+                    <ToastContainer 
+                       position="top-right"
+                       autoClose={500}
+                       hideProgressBar={false}
+                       newestOnTop={false}
+                       closeOnClick
+                       rtl={false}
+                       draggable
+                       pauseOnHover
+                       theme="light"
+                    />
                 </div>
 
             </div>
