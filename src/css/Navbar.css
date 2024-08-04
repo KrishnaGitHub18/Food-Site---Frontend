@@ -12,6 +12,7 @@
     margin-top: 1%;
 }
 .navImg{
+    border: 2px solid red;
     height: 6rem; 
     width: 20%;
     background-image: url('../Images/Navbar/logo.jpg');
@@ -166,6 +167,14 @@
     .navbarmain{
         position: relative;
         width: 96.2%; /*    |||||||||||||||||||||||||||||||||||||||||||||||||||||||||    */
+    }
+    .navImg{
+        width: 40%;
+    }
+}
+@media (max-width: 760PX){
+    .navImg{
+        width: 60%;
     }
 }
 @media (min-width: 1024px) {
