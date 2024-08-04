@@ -12,7 +12,7 @@
     margin-top: 1%;
 }
 .navImg{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 6rem; 
     width: 20%;
     background-image: url('../Images/Navbar/logo.jpg');
