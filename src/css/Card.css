@@ -13,7 +13,7 @@
 .cardmain{
     /* border: 2px solid red; */
     width: 85%;
-    max-width: 430px;
+    /* max-width: 430px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,4 +94,13 @@
     margin-top: 15px;
     background-color: #FC8A06;
     color: white;
+}
+
+@media (max-width: 450px) {
+    .carddescription{
+        display: none;
+    }
+    .cardmain{
+        flex-direction: column;
+    }
 }

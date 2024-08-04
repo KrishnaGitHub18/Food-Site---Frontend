@@ -54,7 +54,7 @@ const Home = () => {
                         <div className='foodcatagoryname'>{data.CategoryName}</div>
                         <hr />
                         <div className="coverfoodboxmain">
-                          <div className='foodBoxMain'>
+                          <div className='foodBoxMain card-main-main'>
                             {
                               foodItemsDisplay
                                 ? (
