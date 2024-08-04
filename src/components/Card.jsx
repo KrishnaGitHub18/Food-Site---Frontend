@@ -71,7 +71,7 @@ const Card = (props) => {
                             )
                         }
                     </select>
-                    <div>Value: ${finalPrice}</div>
+                    <div className='val'>Value: ${finalPrice}</div>
                 </div>
 
                 {/* IMAGE */}

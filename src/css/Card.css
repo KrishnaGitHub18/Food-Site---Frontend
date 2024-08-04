@@ -100,7 +100,17 @@
     .carddescription{
         display: none;
     }
-    .cardmain{
+    /* .cardmain{
         flex-direction: column;
+    }  */
+    .cardmain{
+        width: 78%;
+    }
+    .cardcontent{
+        height: 50%;
+    }
+    .val{
+        /* border: 2px solid green; */
+        margin-top: 10%;
     }
 }
