@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import '../css/signup-page.css'
+// import '../css/signup-page.css'
 import '../css/Signup.css';
 
 const Signup = () => {
@@ -85,7 +85,6 @@ const Signup = () => {
                                     className="form-control"
                                     name='name'
                                     value={credentials.name}
-                                    id="exampleInputName1"
                                     onChange={changes}
                                 />
                             </div>
@@ -98,8 +97,6 @@ const Signup = () => {
                                 <input
                                     type="email"
                                     className="form-control"
-                                    id="exampleInputEmail1"
-                                    aria-describedby="emailHelp"
                                     name='email'
                                     value={credentials.email}
                                     onChange={changes}
@@ -129,7 +126,7 @@ const Signup = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    id="exampleInputPassword"
+                                    id="exampleInputPassword1"
                                     name='geolocation'
                                     value={credentials.geolocation}
                                     onChange={changes}

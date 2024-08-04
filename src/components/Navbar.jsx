@@ -82,9 +82,9 @@ const Navbar = () => {
                                         <button className='phone-nav-button'>Track Orders</button>
                                         <button className='phone-nav-button' onClick={handleLogout}>Logout</button>
                                     </div>
-                                :   <button className='phone-nav-button' onClick={handleLogin}>
-                                        <div>Login/Signup</div>
-                                    </button>
+                                :   <div className='phone-nav-buttons-main'>
+                                        <button className='phone-nav-button' onClick={handleLogin}> Login/Signup </button>
+                                    </div>
                         :   ""
                 }
             </div>

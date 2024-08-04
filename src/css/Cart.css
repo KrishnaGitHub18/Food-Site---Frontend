@@ -151,55 +151,11 @@
 }
 
 
-
-
-
-/* 
-
-
-.heading{
-    height: 10vh;
+/* CHECKOUT */
+.checkout-outer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: larger;
-    font-weight: 700;
-    margin-bottom: 70px;
-    color: white;
-    background-color: #028643;
 }
-.tablemain{
-    border: 2px solid red;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.checkout-inner{
+    width: 20%;
 }
-.table{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.rowhead{
-    width: 100%;
-}
-.rowvalhead{
-    border: 2px solid purple;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 60px;
-}
-.columnhead{
-    border: 2px solid green;
-    width: 100%;
-}
-.columnvalhead{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-} */

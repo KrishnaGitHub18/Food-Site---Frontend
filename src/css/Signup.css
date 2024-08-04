@@ -163,3 +163,11 @@
         display: none;
     }
 }
+
+
+.form-label{
+    background-color: #252525;
+}
+.form-control{
+    background-color: #252525;
+}

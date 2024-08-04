@@ -4,12 +4,17 @@ import trash from '../Images/trash.svg';
 import emptyCart from '../Images/emptyCart1.svg';
 import '../css/Cart.css'
 import { Link } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
 
 const Cart = () => {
 
     let finalOrder = useCartState();
     let dispatch = useCartDispatch();
     let finalPrice = finalOrder.reduce( ((total, food) => total + food.price), 0 );
+    
+    const onToken = (token) => {
+        console.log(token)
+    }
 
     if (!finalOrder.length){
         return(
@@ -65,10 +70,16 @@ const Cart = () => {
                     <div>
                         <h1 className='fs-2'>Final Price: ${finalPrice}/-</h1>
                     </div>
-                    <div>
-                        <button className='btn bg-success mt-5'>
-                            Check Out
-                        </button>
+                    <div className='checkout-outer'>
+                        <StripeCheckout
+                            className='checkout-inner'
+                            bitcoin 
+                            token={onToken}
+                            name='FoodWay Checkout'
+                            currency='USD'
+                            amount={finalPrice*100}
+                            stripeKey="pk_test_51Pk0s7Rr6bgn4LRLhUOx6kodV5YFQiDJqNIcZU8fxtptdS35PXhKuYrWkOFhUwqyTY2ALKQvuggzmV98dzf4FIGW00WEtsI4hL"
+                        />
                     </div>
                 </div>`
             </div>
