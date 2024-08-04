@@ -14,7 +14,7 @@ const Home = () => {
 
   const fetchData = async () => {
     // let res = await fetch("https://food-site-backend-nine.vercel.app/api/foodItemsData", {
-    let res = await fetch("http://localhost:5000/api/foodItemsData", {
+    let res = await fetch("https://food-way-backend.vercel.app/api/foodItemsData", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

@@ -19,8 +19,8 @@ const Signup = () => {
     )
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/register', {
-            // const response = await fetch('https://food-site-backend-nine.vercel.app/api/register', {
+        // const response = await fetch('http://localhost:5000/api/register', {
+            const response = await fetch('https://food-way-backend.vercel.app/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
