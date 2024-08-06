@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useCartState, useCartDispatch} from './ContextReducer';
+import{ message } from "antd";
+
 
 const Card = (props) => {
 
@@ -38,7 +39,7 @@ const Card = (props) => {
         )
 
         console.log(finalOrder);
-        toast("Value added to cart");;
+        message.success("Value added to cart");
     } 
     
     return (
@@ -77,18 +78,7 @@ const Card = (props) => {
                 {/* IMAGE */}
                 <div className="cardimage">
                     <img src={props.foodItemProp.img}/> 
-                    <button onClick={handleAddToCart} className='submitoverlap'></button>
-                    <ToastContainer 
-                       position="top-right"
-                       autoClose={1500}
-                       hideProgressBar={false}
-                       newestOnTop={false}
-                       closeOnClick
-                       rtl={false}
-                       draggable
-                       pauseOnHover
-                       theme="light"
-                    />
+                    <button onClick={handleAddToCart} className='submitoverlap'></button> 
                 </div>
 
             </div>
