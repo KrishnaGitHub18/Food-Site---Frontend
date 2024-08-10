@@ -171,3 +171,11 @@
 .form-control{
     background-color: #252525;
 }
+
+/* Loader CSS */
+.loader-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+}

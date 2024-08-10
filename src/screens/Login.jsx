@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { ThreeDots } from 'react-loader-spinner';
 import '../css/Login.css'
 
 const Login = () => {
 
   //Navigation
   let navigate = useNavigate();
+
+  //use state for loader
+  const [loading, setLoading] = useState(false);
 
   const [credentials, setCredentials] = useState(
     {
@@ -16,8 +20,12 @@ const Login = () => {
   )
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Start loading
+    setLoading(true); 
+
     // const response = await fetch('http://localhost:5000/api/login', {
-      const response = await fetch('https://food-way-backend.vercel.app/api/login', {
+    const response = await fetch('https://food-way-backend.vercel.app/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -29,6 +37,10 @@ const Login = () => {
         }
       )
     })
+    
+    //stop loading
+    setLoading(false);
+        
     const dataValidity = await response.json();
     console.log(dataValidity);
     if (!dataValidity.success) {
@@ -52,76 +64,91 @@ const Login = () => {
   }
 
   return (
-    <div className='main-div'>
-      <div className='background'>
-
-        {/* LOGIN/SIGNUP */}
-        <div className="top">
-          <div className='login-signup'>
-            <div className='loginbutton'><Link className='loginbutton1' to="/Login">Login</Link></div>
-            <div className='signupbutton'><Link to="/signup" className='signupbutton1'>Signup</Link></div>
-          </div>
-        </div>
-
-        {/* FORM & TEXT */}
-        <div className='formtext'>
-
-          {/* FORM */}
-          <div className='form-box'>
-            <form onSubmit={handleSubmit}>
-              
-              {/* EMAIL */}
-              <label htmlFor="exampleInputEmail1">
-                Email address
-              </label>
-              <input
-                type="email"
-                className="form-control mb-3"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                name='email'
-                value={credentials.email}
-                onChange={changes}
+    <>
+      {
+        loading
+            ?  <ThreeDots 
+                visible={true}
+                height="80"
+                width="80"
+                color="#FC8A06"
+                radius="9"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass="loader-container"
               />
-
-              {/* PASSWORD */}
-              <label htmlFor="exampleInputPassword1" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control mb-3"
-                id="exampleInputPassword1"
-                name='password'
-                value={credentials.password}
-                onChange={changes}
-              />
-
-              <div className="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label className="form-check-label" htmlFor="exampleCheck1">
-                  Agreed T&C  
-                </label>
+          : <div className='main-div'>
+          <div className='background'>
+    
+            {/* LOGIN/SIGNUP */}
+            <div className="top">
+              <div className='login-signup'>
+                <div className='loginbutton'><Link className='loginbutton1' to="/Login">Login</Link></div>
+                <div className='signupbutton'><Link to="/signup" className='signupbutton1'>Signup</Link></div>
               </div>
-
-              <button type="submit" className="btn btn-success">
-                Submit
-              </button>
-
-            </form>
-          </div>
-
-          <div className='texts'>
-            <div className='texta1'>FoodWay</div>
-            <div className='texta2'>Login Page</div>
+            </div>
+    
+            {/* FORM & TEXT */}
+            <div className='formtext'>
+    
+              {/* FORM */}
+              <div className='form-box'>
+                <form onSubmit={handleSubmit}>
+                  
+                  {/* EMAIL */}
+                  <label htmlFor="exampleInputEmail1">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control mb-3"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    name='email'
+                    value={credentials.email}
+                    onChange={changes}
+                  />
+    
+                  {/* PASSWORD */}
+                  <label htmlFor="exampleInputPassword1" className="form-label">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control mb-3"
+                    id="exampleInputPassword1"
+                    name='password'
+                    value={credentials.password}
+                    onChange={changes}
+                  />
+    
+                  <div className="mb-3 form-check">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label className="form-check-label" htmlFor="exampleCheck1">
+                      Agreed T&C  
+                    </label>
+                  </div>
+    
+                  <button type="submit" className="btn btn-success">
+                    Submit
+                  </button>
+    
+                </form>
+              </div>
+    
+              <div className='texts'>
+                <div className='texta1'>FoodWay</div>
+                <div className='texta2'>Login Page</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      }
+    </>
   )
 
   //   return (

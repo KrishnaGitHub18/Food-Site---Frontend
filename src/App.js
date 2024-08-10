@@ -6,7 +6,6 @@ import Signup from './screens/Signup.jsx'
 import Cart from './screens/Cart.jsx';
 import Home from './screens/Home1.jsx'
 import Stripe from './screens/StripePayment.jsx'
-
 import CartProvider from './components/ContextReducer.jsx';
 
 function App() {

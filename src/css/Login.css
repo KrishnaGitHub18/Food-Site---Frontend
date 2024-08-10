@@ -239,3 +239,11 @@
     color: #e0e0e0;
     font-size: 0.9rem;
 }
+
+/* Loader CSS */
+.loader-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+}

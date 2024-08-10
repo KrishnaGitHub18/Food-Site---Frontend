@@ -68,7 +68,7 @@ const Cart = () => {
 
                     </table>
                     <div>
-                        <h1 className='fs-2'>Final Price: ${finalPrice}/-</h1>
+                        <h1 className='fs-2'>Final Price: ₹{finalPrice}/-</h1>
                     </div>
                     <div className='checkout-outer'>
                         <StripeCheckout
@@ -76,7 +76,7 @@ const Cart = () => {
                             bitcoin 
                             token={onToken}
                             name='FoodWay Checkout'
-                            currency='USD'
+                            currency='INR'
                             amount={finalPrice*100}
                             stripeKey="pk_test_51Pk0s7Rr6bgn4LRLhUOx6kodV5YFQiDJqNIcZU8fxtptdS35PXhKuYrWkOFhUwqyTY2ALKQvuggzmV98dzf4FIGW00WEtsI4hL"
                         />
