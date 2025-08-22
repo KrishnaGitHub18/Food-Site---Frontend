@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // import { useCartState, useCartDispatch } from '../components/ContextReducer';
 import '../css/Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ onMenuClick, onOffersClick }) => {
 
     const [phbtn, setphbtn] = useState(0);
 
@@ -33,8 +33,8 @@ const Navbar = () => {
                             ?   <div className='navbtn'>
                                     <div className='buttons'>
                                         <button className='prs'>Home</button>
-                                        <button className='abs'>Browse Menu</button>
-                                        <button className='abs'>Special Offer</button>
+                                        <button className='abs' onClick={onMenuClick}>Browse Menu</button>
+                                        <button className='abs' onClick={onOffersClick}>Special Offer</button>
                                         <Link to='/Cart' className='mycartabs'>
                                             <button className='abs1'>
                                                 My Cart

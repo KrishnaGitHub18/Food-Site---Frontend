@@ -49,7 +49,22 @@ const Card = (props) => {
                 {/* CONTENT */}
                 <div className="cardcontent">
                     <div className="cardname">{props.foodItemProp.name}</div>
-                    <div className="carddescription">{props.foodItemProp.description}</div>
+                    <div className="carddescription">
+                        <p
+                        style={{
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            lineHeight: '1.2em',
+                            maxHeight: '2.4em',
+                            marginRight: 10,
+                        }}
+                        >
+                        {props.foodItemProp.description}
+                        </p>
+                    </div>
 
                     {/* QUANTITY */}
                     <select className='cardquantity' onChange={(e)=>setQuantity(e.target.value)}>
